@@ -1,4 +1,5 @@
 import { applications } from './applications';
+import { getByMostRecent } from './statuses';
 
 /**
  * The starting point. Right now it dumps the raw data on the page so you can
@@ -10,6 +11,8 @@ import { applications } from './applications';
  * empty.
  */
 export default function App() {
+	const sortedApps = [...applications].sort(getByMostRecent);
+
 	return (
 		<>
 			<header className="site-header">
@@ -21,6 +24,7 @@ export default function App() {
 			<main className="container">
 				<p>{applications.length} applications loaded.</p>
 				<pre>{JSON.stringify(applications[0], null, 2)}</pre>
+				<ApplicationList applications={sortedApps}/>
 			</main>
 		</>
 	);
