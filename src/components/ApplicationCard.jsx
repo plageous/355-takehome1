@@ -1,17 +1,20 @@
-import { STATUSES, STATUS_LABELS, formatDate } from "../statuses";
+import { formatDate } from "../statuses/jsx";
+import { statusBadge } from "./StatusBadge.jsx";
 
 export default function ApplicationCard( { application } ) {
     
     const { id, company, role, status, appliedOn, source, url, notes } = application;
     const cleanDate = formatDate(appliedOn);
-    const renderNote = note == '' ? null : note;
+    const renderNote = note && <p className="note">{note}</p>;
 
     return (
-        <article className="card">
-            <h3 className="role">{role}</h3>
-            <p className="company">{company}</p>
-            <p className="meta">{cleanDate} { }</p>
-            <p className="note">{renderNote}</p>
-        </article>
+        <li className="job-card">
+            <div className="grow">
+                <h3>{role}</h3>
+                <div className="company">{company}</div>
+                <div className="meta">Applied {cleanDate}</div>
+                {renderNote}
+            </div>
+        </li>
     );
 }
