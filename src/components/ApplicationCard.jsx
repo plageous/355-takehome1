@@ -1,10 +1,11 @@
 import { formatDate } from "../statuses/jsx";
-import { statusBadge } from "./StatusBadge.jsx";
+import StatusBadge from "./StatusBadge.jsx";
 
 export default function ApplicationCard( { application } ) {
     
     const { id, company, role, status, appliedOn, source, url, notes } = application;
     const cleanDate = formatDate(appliedOn);
+    const renderSource = source ? ` - via ${source}` : "";
     const renderNote = note && <p className="note">{note}</p>;
 
     return (
@@ -12,9 +13,10 @@ export default function ApplicationCard( { application } ) {
             <div className="grow">
                 <h3>{role}</h3>
                 <div className="company">{company}</div>
-                <div className="meta">Applied {cleanDate}</div>
+                <div className="meta">Applied {cleanDate}{renderSource}</div>
                 {renderNote}
             </div>
+            <StatusBadge status={status}/>
         </li>
     );
 }
