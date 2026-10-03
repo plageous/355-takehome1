@@ -6,7 +6,7 @@ export default function ApplicationCard( { application } ) {
     const { id, company, role, status, appliedOn, source, url, notes } = application;
     const cleanDate = formatDate(appliedOn);
     const renderSource = source ? ` - via ${source}` : "";
-    const renderNote = note && <p className="note">{note}</p>;
+    const renderNote = notes && <p className="note">{notes}</p>;
 
     return (
         <li className="job-card">

@@ -29,5 +29,5 @@ export function formatDate(iso) {
 }
 
 export function getByMostRecent(a, b) {
-	return b.appliedOn.localCompare(a.appliedOn);
+	return b.appliedOn.localeCompare(a.appliedOn);
 }
