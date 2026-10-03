@@ -1,5 +1,6 @@
 import { applications } from './applications';
 import { getByMostRecent } from './statuses';
+import ApplicationList from './components/ApplicationList';
 
 /**
  * The starting point. Right now it dumps the raw data on the page so you can

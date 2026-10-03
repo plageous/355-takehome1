@@ -1,4 +1,4 @@
-import { STATUS_LABELS } from "../statuses.js"
+import { STATUS_LABELS } from "../statuses"
 
 export default function StatusBadge({ status }) {
     const whichStatus = STATUS_LABELS[status] ?? status;

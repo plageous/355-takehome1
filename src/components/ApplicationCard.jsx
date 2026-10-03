@@ -1,5 +1,5 @@
-import { formatDate } from "../statuses/jsx";
-import StatusBadge from "./StatusBadge.jsx";
+import { formatDate } from "../statuses";
+import StatusBadge from "./StatusBadge";
 
 export default function ApplicationCard( { application } ) {
     

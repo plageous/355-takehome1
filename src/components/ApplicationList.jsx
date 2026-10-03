@@ -1,4 +1,4 @@
-import ApplicationCard from "./ApplicationCard.jsx";
+import ApplicationCard from "./ApplicationCard";
 
 export default function ApplicationList({ applications }) {
     if (applications.length === 0) return <p className="empty">No applications!... yet.</p>;
